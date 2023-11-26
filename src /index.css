@@ -1,0 +1,62 @@
+html,
+body {
+    overflow-x: hidden;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    /* border: 2px red solid; */
+}
+
+.helico {
+    width: 400px;
+    height: 200px;
+    margin: 50px auto 0;
+    /* border: 2px black solid; */
+}
+
+.move {
+    animation: move-animation 3s infinite;
+    /* border: 2px pink solid; */
+}
+
+.flying {
+    /* border: 2px blue solid; */
+    animation: helices-animation 0.3s steps(2) infinite;
+    background: url("./assets/helico.png") 0 0 no-repeat;
+}
+
+@keyframes helices-animation {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -445px;
+    }
+}
+
+@keyframes move-animation {
+    from {
+        margin-left: 120%;
+    }
+    to {
+        margin-left: -120%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    .helico {
+        margin: 20px auto 0;
+    }
+}
